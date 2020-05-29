@@ -1,2 +1,0 @@
-# Barista-Matic
-Vending Machine
