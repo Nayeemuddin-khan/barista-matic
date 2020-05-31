@@ -1,5 +1,5 @@
 import React from "react";
-import DrinkList from "./views/drinksList";
+import Home from "./views/home";
 
 import "./App.css";
 
@@ -10,7 +10,7 @@ function App() {
         <h2>Barista Matic</h2>
       </header>
 
-      {<DrinkList />}
+      <Home />
     </div>
   );
 }

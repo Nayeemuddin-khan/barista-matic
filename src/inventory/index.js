@@ -10,7 +10,7 @@ export const inventory = {
   [ingredients.FOAMED_MILK]: 70,
   [ingredients.STEAMED_MILK]: 60,
   [ingredients.WHIPPED_CREAM]: 50,
-  [ingredients.DECAF_COFFE]: 45,
+  [ingredients.DECAF_COFFEE]: 45,
 };
 
 /**

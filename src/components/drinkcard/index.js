@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { DrinksContext } from "../../context/drink-context";
+import { ACTIONS } from "../../context/drink-provider";
 
-const DrinkCard = ({ drinkName, drinkIngredients, costPerDrink }) => {
+const DrinkCard = ({ drinkIngredients, costPerDrink }) => {
   const [isDrinkDetails, setDrinkCard] = useState(false); // show drink name or drink details card
 
-  const displayIngredients = Object.keys(drinkIngredients).map(
+  const { dispatch } = useContext(DrinksContext);
+
+  const displayIngredients = Object.keys(drinkIngredients.ingredients).map(
     (ingredientName) => {
       return (
         <ul className="ingredient-container">
-          {ingredientName} : {drinkIngredients[ingredientName]}
+          {ingredientName} : {drinkIngredients.ingredients[ingredientName]}
         </ul>
       );
     }
@@ -15,17 +19,29 @@ const DrinkCard = ({ drinkName, drinkIngredients, costPerDrink }) => {
 
   return (
     <div onClick={() => setDrinkCard(!isDrinkDetails)}>
-      <h3> {drinkName} </h3>
+      <h3> {drinkIngredients.name} </h3>
       {isDrinkDetails ? (
-        <>{displayIngredients}}</>
-      ) : (
         <>
           <div>{costPerDrink}</div>
-          <button onClick={() => {}} className="button dispence">
+          <button
+            onClick={() => {
+              dispatch({
+                type: ACTIONS.DISPENSE_DRINK,
+                payload: {
+                  drinkName: drinkIngredients.name,
+                },
+              });
+            }}
+            className="button dispence"
+          >
             Dispense
           </button>
         </>
+      ) : (
+        <>{displayIngredients}</>
       )}
     </div>
   );
 };
+
+export default DrinkCard;

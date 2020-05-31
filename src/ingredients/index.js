@@ -2,7 +2,7 @@ export const ingredients = {
   COFFEE: "coffee",
   SUGAR: "sugar",
   CREAM: "cream",
-  DECAF_COFFE: "decaf coffee",
+  DECAF_COFFEE: "decaf coffee",
   WHIPPED_CREAM: "whipped cream",
   ESPRESSO: "espresso",
   STEAMED_MILK: "steamed milk",
@@ -11,7 +11,7 @@ export const ingredients = {
 };
 
 // Holds the ingredients per unit costi in dollars
-const ingredientswithCost = {
+export const ingredientsWithCost = {
   [ingredients.COFFEE]: 0.75,
   [ingredients.SUGAR]: 0.25,
   [ingredients.CREAM]: 0.25,
@@ -20,7 +20,7 @@ const ingredientswithCost = {
   [ingredients.STEAMED_MILK]: 0.35,
   [ingredients.FOAMED_MILK]: 0.35,
   [ingredients.COCOA]: 0.5,
-  [ingredients.DECAF_COFFE]: 0.2,
+  [ingredients.DECAF_COFFEE]: 0.2,
 };
 
 /**
@@ -33,6 +33,6 @@ export const addNewIngredient = (ingredientName, costPerUnit) => {
 
   ingredients[upperCaseIngredient] = ingredientName;
 
-  ingredientswithCost[upperCaseIngredient] =
-    costPerUnit || ingredientswithCost[upperCaseIngredient];
+  ingredientsWithCost[upperCaseIngredient] =
+    costPerUnit || ingredientsWithCost[upperCaseIngredient];
 };
