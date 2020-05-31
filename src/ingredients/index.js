@@ -2,6 +2,7 @@ export const ingredients = {
   COFFEE: "coffee",
   SUGAR: "sugar",
   CREAM: "cream",
+  DECAF_COFFE: "decaf coffee",
   WHIPPED_CREAM: "whipped cream",
   ESPRESSO: "espresso",
   STEAMED_MILK: "steamed milk",
@@ -9,10 +10,17 @@ export const ingredients = {
   COCOA: "cocoa",
 };
 
-// Holds the ingredients per unit cost
+// Holds the ingredients per unit costi in dollars
 const ingredientswithCost = {
   [ingredients.COFFEE]: 0.75,
   [ingredients.SUGAR]: 0.25,
+  [ingredients.CREAM]: 0.25,
+  [ingredients.WHIPPED_CREAM]: 0.25,
+  [ingredients.ESPRESSO]: 0.45,
+  [ingredients.STEAMED_MILK]: 0.35,
+  [ingredients.FOAMED_MILK]: 0.35,
+  [ingredients.COCOA]: 0.5,
+  [ingredients.DECAF_COFFE]: 0.2,
 };
 
 /**
@@ -28,36 +36,3 @@ export const addNewIngredient = (ingredientName, costPerUnit) => {
   ingredientswithCost[upperCaseIngredient] =
     costPerUnit || ingredientswithCost[upperCaseIngredient];
 };
-
-// DATA STRUCTURES:
-
-// const Ingridients = {
-//     COFFEE: 'coffee',
-// }
-// const ingridientsWithCost = {
-//     [Ingridients.COFFEE]: 123,
-// }
-
-// const addIngridient = (ingridientName, costPerUnit) => {
-//     Ingridients[ingridientName.toUpperCase()] = ingridientName;
-//     ingridientsWithCost[ingridientName.toUpperCase()] = costPerUnit;
-// }
-
-// const drinksConst = {
-//     'COFFEE': 'coffee',
-//     DECAF
-// }
-
-// const drinksList = {
-//     [drinksConst.COFFEE]: {
-//         Ingridients[COFFEE]: 3,
-//         Ingridients[SUGAR]:1,
-//         Ingridients[CREAM]: 1
-//     },
-//     [drinksConst.COFFEE]: {
-//         Ingridients[COFFEE]: 3,
-//         Ingridients[SUGAR]:1,
-//         Ingridients[CREAM]: 1
-//     },
-
-// }
