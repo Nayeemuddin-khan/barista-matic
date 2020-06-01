@@ -35,7 +35,7 @@ const reducer = (state, action) => {
           ...ingredientsWithUpdateQuantity,
         },
       };
-      break;
+
     case ACTIONS.UPDATE_INVENTORY:
       const { ingredientName, newQuantity } = action.payload;
 

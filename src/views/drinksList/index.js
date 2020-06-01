@@ -8,7 +8,7 @@ const DrinkList = ({ drinks }) => {
   return (
     <div className="drinks-container">
       {store.drinksWithIngredients.map((drink) => (
-        <DrinkCard drinkIngredients={drink} />
+        <DrinkCard drink={drink} />
       ))}
     </div>
   );

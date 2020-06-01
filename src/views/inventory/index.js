@@ -8,10 +8,11 @@ const InventoryView = () => {
 
   return (
     <div>
-      <h2>inventory</h2>
+      <h2>Inventory (in Units)</h2>
       {Object.keys(currentInventory).map((ingredientInventory) => (
         <div>
-          {ingredientInventory}: {currentInventory[ingredientInventory]} Units
+          <div className="ingredient-inventory">{ingredientInventory} </div>:
+          {currentInventory[ingredientInventory]}
         </div>
       ))}
     </div>
