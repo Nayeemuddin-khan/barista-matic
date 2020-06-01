@@ -22,7 +22,10 @@ const DrinkCard = ({ drink }) => {
   const cardClasses = `drink-card ${isDrinkDetails ? "flip" : ""}`;
 
   return (
-    <div className={cardClasses} onClick={() => setDrinkCard(!isDrinkDetails)}>
+    <button
+      className={cardClasses}
+      onClick={() => setDrinkCard(!isDrinkDetails)}
+    >
       <h3> {drink.name} </h3>
       {isDrinkDetails ? (
         <>
@@ -45,7 +48,7 @@ const DrinkCard = ({ drink }) => {
       ) : (
         displayIngredients
       )}
-    </div>
+    </button>
   );
 };
 
