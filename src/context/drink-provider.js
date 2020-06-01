@@ -24,8 +24,10 @@ const reducer = (state, action) => {
       // get the new quantity available in the inventory
       const ingredientsWithUpdateQuantity = {};
       Object.keys(ingredients).forEach((intName) => {
-        ingredientsWithUpdateQuantity[intName] =
-          inventory[intName] - ingredients[intName];
+        const updatedQuantity = state.inventory[intName] - ingredients[intName];
+        ingredientsWithUpdateQuantity[intName] = updatedQuantity;
+
+        updateInventory(intName, updatedQuantity);
       });
 
       return {

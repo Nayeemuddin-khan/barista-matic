@@ -19,5 +19,5 @@ export const inventory = {
  * @param {number} quantity
  */
 export const updateInventory = (ingredientName, quantity) => {
-  inventory[ingredientName.toUpperCase()] = quantity;
+  inventory[ingredientName] = quantity;
 };
